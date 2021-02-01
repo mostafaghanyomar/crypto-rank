@@ -1,5 +1,4 @@
 import { useTheme } from "@material-ui/core";
-import { useTranslation } from "react-i18next";
 import CookieConsent, {
   Cookies,
   getCookieConsentValue,
@@ -14,7 +13,6 @@ export default function CookieConsentBanner(props) {
     getCookieConsentValue(COOKIE_NAME) != null
   );
   const theme = useTheme();
-  const { t } = useTranslation();
   return cookieUseAccepted ? (
     null
   ) : (
@@ -29,7 +27,7 @@ export default function CookieConsentBanner(props) {
           variant="contained"
           size="small"
         >
-          {t("cookie.banner.accept")}
+          Ok!
         </Button>
       )}
       location="bottom"
@@ -37,7 +35,7 @@ export default function CookieConsentBanner(props) {
       cookieName={COOKIE_NAME}
     >
       <Typography variant="body1" display="inline">
-        {t("cookie.banner.text")}
+        We use cookies
       </Typography>
     </CookieConsent>
   );

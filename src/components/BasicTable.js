@@ -6,8 +6,8 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { Button, TextField, makeStyles } from "@material-ui/core";
-import { useSelector, useDispatch } from "react-redux";
-import { Fragment, useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { Fragment, useState } from "react";
 import Alert from "@material-ui/lab/Alert/Alert";
 
 const useStyles = makeStyles({
@@ -20,7 +20,6 @@ export default function BasicTable() {
   const [ip, setIp] = useState("");
   const classes = useStyles();
   const data = useSelector((state) => state.app.data);
-  const dispatch = useDispatch();
   const LOW_RISK = "LOW_RISK";
   const MEDIUM_RISK = "MEDIUM_RISK";
   const HIGH_RISK = "HIGH_RISK";
@@ -86,7 +85,7 @@ export default function BasicTable() {
         />
       </div>
       <Alert severity="info" variant="filled">
-        bla
+          {invTyp}
       </Alert>
 
       <TableContainer component={Paper}>
