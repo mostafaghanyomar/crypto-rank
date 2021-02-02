@@ -26,6 +26,7 @@ export default function CookieConsentBanner(props) {
           }}
           variant="contained"
           size="small"
+          color="primary"
         >
           Ok!
         </Button>
